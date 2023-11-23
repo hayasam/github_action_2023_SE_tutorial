@@ -3,7 +3,8 @@
 name: GitHub Actions Maven Build Example
 
 on:
-  workflow_dispatch:
+   push:
+    branches: [ main ]
 jobs:
 
   build-on-ubuntu:
