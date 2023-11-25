@@ -33,10 +33,7 @@ jobs:
       - name: another
         run: mvn -B verify -P coverage --no-transfer-progress
         
-      - name:  Step  5 Jacoco report  
-        uses: codecov/codecov-action@v1
-        with:
-          file: ./**/target/site/jacoco/jacoco.xml
+ 
 
       - name: Upload Code Coverage Artifacts
         uses: actions/upload-artifact@v2
