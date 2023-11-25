@@ -50,6 +50,7 @@
                         all tests have been run. -->
                         <execution>
                             <id>generate-report</id>
+			    <phase>verify</phase>
                             <goals>
                                 <goal>report</goal>
                             </goals>
