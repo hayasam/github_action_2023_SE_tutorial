@@ -2,7 +2,7 @@ name: build
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths: [ '**.java', '.github/workflows/main3.yml', 'pom.xml' ]
   pull_request:
     branches: [ master ]
