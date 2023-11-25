@@ -25,7 +25,7 @@ jobs:
           java-version: 1.11
     
       - name: Step 3 - Build Maven Project
-        run: mvn  --batch-mode clean -DskipTests  jacoco:prepare-agent package jacoco:report 
+        run: mvn  --batch-mode clean -DskipTests  
         
       
       - name: JaCoCo Code Coverage Report
@@ -62,7 +62,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN2023 }}
-        run: mvn -B verify  org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SENov2023_github_action_2023_SE_tutorial 
+        run: mvn -B   jacoco:prepare-agent  verify  org.sonarsource.scanner.maven:sonar-maven-plugin:sonar jacoco:report  -Dsonar.projectKey=SENov2023_github_action_2023_SE_tutorial 
         
-                    
+                  
   
