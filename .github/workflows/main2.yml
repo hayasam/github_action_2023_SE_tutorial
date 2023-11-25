@@ -25,10 +25,18 @@ jobs:
     
       - name: Step 3 - Build Maven Project
         run: mvn  --batch-mode clean -DskipTests  jacoco:prepare-agent install jacoco:report package
-
+    
 
       - name: Step 4 - run test cases
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+
+      - name: another
+        run: mvn -B verify -P coverage --no-transfer-progress
+        
+      - name:  Step  5 Jacoco report  
+        uses: codecov/codecov-action@v1
+        with:
+          file: ./**/target/site/jacoco/jacoco.xml
 
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
