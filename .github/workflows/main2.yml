@@ -26,7 +26,11 @@ jobs:
     
       - name: Step 3 - Build Maven Project
         run: mvn  --batch-mode clean -DskipTests  jacoco:prepare-agent install jacoco:report package
-    
+        
+      - name: Code Coverage Summary Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+         filename: coverage.cobertura.xml
 
       - name: Step 4 - run test cases
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
