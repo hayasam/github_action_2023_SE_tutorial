@@ -50,8 +50,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN2023 }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar  -Dsonar.coverage.jacoco.xmlReportPaths=
-            ../target/site/jacoco-aggregate/jacoco.xml -Dsonar.projectKey=SENov2023_github_action_2023_SE_tutorial
+        run: mvn -B verify -Dsonar.coverage.jacoco.xmlReportPaths=
+            ../target/site/jacoco-aggregate/jacoco.xml org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SENov2023_github_action_2023_SE_tutorial  jacoco:prepare-agent  jacoco:report 
         
                     
   
