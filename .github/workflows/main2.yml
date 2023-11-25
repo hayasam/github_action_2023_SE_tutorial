@@ -30,19 +30,7 @@ jobs:
 
       - name: Step 4 - run test cases
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
-
-      - name: another
-        run: mvn -B verify -P coverage --no-transfer-progress
         
- 
-
-      - name: Upload Code Coverage Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: code-coverage-report-markdown
-          path: */coverage-results.md 
-          retention-days: 1  
-
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
