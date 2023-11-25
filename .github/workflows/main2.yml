@@ -51,6 +51,7 @@ jobs:
          args:             
             -Dsonar.projectKey=github_action_2023_SE_tutorial
             -Dsonar.organization=SENov2023
+         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
 
           
           
