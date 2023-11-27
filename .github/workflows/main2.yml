@@ -22,7 +22,7 @@ jobs:
           java-version: 1.11
     
       - name: Step 3 - Build Maven Project
-        run: mvn  --batch-mode clean -DskipTests  
+        run: mvn  --batch-mode clean install package -DskipTests  
         
       
      
